@@ -15,12 +15,12 @@ export function ContactForm() {
     event.preventDefault()
     setIsLoading(true)
 
-    const formData = new FormData(event.currentTarget)
+    // const formData = new FormData(event.currentTarget)
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    // await new Promise(resolve => setTimeout(resolve, 1000))
 
-    setIsLoading(false)
+    // setIsLoading(false)
     toast({
       title: "Message sent successfully!",
       description: "We'll get back to you as soon as possible.",

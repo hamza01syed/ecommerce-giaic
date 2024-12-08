@@ -1,24 +1,37 @@
-// "use client"
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 // import { AddToCartButton } from "@/components/add-to-cart-button"
 import { products } from "@/components/Products-grid"
-import { Button } from "@/components/ui/button"
-import { CiShoppingCart } from "react-icons/ci"
 import { AddToCartButton } from "@/components/Add-to-cart"
+import { useParams } from "next/navigation"
 
 
 
 
 // console.log(products)
+interface Item{
+    
+    id: number | string,
+    name: string,
+    price: number | string,
+    image?: string,
+    tag?: string,
+    description?: string
 
-export default  function ProductPage(props:any) {
-    const id= props.params.id
-    console.log("id",id)
-    const item=products.filter(item=>item.id==id)
+    
+}
+export default function ProductPage() {
+    // console.log(params)
+    // const {id}= await params
+    // console.log("id",id)
+    const {id}=useParams()
+    console.log(id)
+    const item=products.filter((item:Item)=>item.id==id)
     console.log(item)
+    
   return (
-    <main className="max-w-[1321px] mx-auto  py-8">
+    <main className="max-w-[1321] mx-auto px-4 py-8">
       <div className="grid md:grid-cols-2 gap-8 mb-16">
         <div className="relative  rounded-lg overflow-hidden">
           <Image
@@ -42,9 +55,7 @@ export default  function ProductPage(props:any) {
           <AddToCartButton  />
          
           
-          {/* <Button className="w-[212px] mt-20 h-[63px] bg-[#029FAE] text-[20px]" >
-          <CiShoppingCart />
-            Add to Cart</Button> */}
+          
         </div>
       </div>
 

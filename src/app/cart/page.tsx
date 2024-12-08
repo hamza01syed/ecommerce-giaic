@@ -44,7 +44,7 @@ export default function CartPage() {
     })
   }
 
-  const handleAddToWishlist = (id: number) => {
+  const handleAddToWishlist = () => {
     toast({
       title: "Added to wishlist",
       description: "The item has been added to your wishlist.",
